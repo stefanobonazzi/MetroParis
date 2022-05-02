@@ -23,8 +23,8 @@ public class DBConnect {
 			ds = new HikariDataSource();
 
 			ds.setJdbcUrl(jdbcURL);
-			ds.setUsername("root");
-			ds.setPassword("root");
+			ds.setUsername("stefanobonazzi");
+			ds.setPassword("psw2810");
 
 			// configurazione MySQL
 			ds.addDataSourceProperty("cachePrepStmts", "true");
