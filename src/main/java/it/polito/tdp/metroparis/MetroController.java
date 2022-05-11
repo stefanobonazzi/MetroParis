@@ -12,7 +12,10 @@ import it.polito.tdp.metroparis.model.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class MetroController {
 
@@ -29,6 +32,12 @@ public class MetroController {
 
     @FXML // fx:id="boxPartenza"
     private ComboBox<Fermata> boxPartenza; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="colFermata"
+    private TableColumn<Fermata, String> colFermata; // Value injected by FXMLLoader
+
+    @FXML // fx:id="tablePercorso"
+    private TableView<Fermata> tablePercorso; // Value injected by FXMLLoader
 
     @FXML // fx:id="txtResult"
     private TextArea txtResult; // Value injected by FXMLLoader
@@ -53,6 +62,7 @@ public class MetroController {
         assert boxPartenza != null : "fx:id=\"boxPartenza\" was not injected: check your FXML file 'Metro.fxml'.";
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Metro.fxml'.";
 
+        colFermata.setCellValueFactory(new PropertyValueFactory<Fermata, String>("nome"));
     }
 
 	public void setModel(Model model) {
